@@ -24,11 +24,11 @@ pp = pprint.PrettyPrinter(depth=4)
 pp.pprint(gamesDict)
 
 # 1 - Buscando informação dentro de um dicionário
-print(gamesDict["mario odyssey"]["genre"])
+pp.pprint(gamesDict['fifa 23']['genre'])
 
 # 2 - Adicionando novo item
-gamesDict["mario odyssey"]["players"] = 1
-print(gamesDict['mario odyssey'])
+gamesDict['fifa 23']['players'] = 1
+pp.pprint(gamesDict['fifa 23'])
 
 # 3 - Excluindo um dicionário
 del gamesDict["fifa 23"]
