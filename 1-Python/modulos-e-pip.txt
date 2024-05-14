@@ -1,0 +1,18 @@
+>>> Motivação para usar módulos
+
+- Decompor uma tarefa complexa em tarefas menores e de fácil solução
+- Fazer o uso da técnica "Dividir para conquistar"
+- Evitar repetição de código
+
+>>> O que é um módulo?
+
+- São arquivos em Python que podem conter funções, classes e variáveis
+- Módulos podem ser importados usando a palavra reservada import
+- Os módulos também permitem a reutilização de código
+
+>>> Vantagens de Usar Módulos
+
+- Simplicidade ("Dividir para conquistar")
+- Melhor manutelibilidade no código
+- Isolamento no projeto de software
+- Facilita colaboração entre desenvolvedores e outros integrantes
