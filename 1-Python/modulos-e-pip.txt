@@ -16,3 +16,135 @@
 - Melhor manutelibilidade no código
 - Isolamento no projeto de software
 - Facilita colaboração entre desenvolvedores e outros integrantes
+
+
+>>> Módulos Builtin  python
+
+Os módulos built-in do Python são módulos integrados à linguagem e estão disponíveis para uso imediato, sem a necessidade de instalação adicional. 
+Eles fornecem funcionalidades essenciais para várias tarefas comuns de programação. Aqui estão alguns dos módulos built-in mais comuns:
+
+os: Fornece funções para interagir com o sistema operacional, como manipulação de arquivos, diretórios e execução de comandos do sistema.
+
+sys: Oferece acesso a algumas variáveis e funções usadas ou mantidas pelo interpretador Python e fornece funcionalidades relacionadas ao sistema, como argumentos 
+da linha de comando e manipulação de exceções.
+
+math: Contém funções matemáticas, como trigonometria, logaritmos, constantes matemáticas, etc.
+
+random: Usado para geração de números aleatórios.
+
+datetime: Fornece classes para manipulação de datas e horas.
+
+collections: Oferece tipos de dados adicionais em relação aos tipos de dados padrão do Python, como defaultdict, Counter, deque, etc.
+
+json: Facilita a serialização e desserialização de objetos Python em e de JSON (JavaScript Object Notation).
+
+re: Módulo para expressões regulares, permitindo busca e manipulação de strings complexas.
+
+os.path: Um submódulo do módulo os que fornece funções específicas para manipulação de caminhos de arquivo.
+
+pickle: Usado para serializar e desserializar objetos Python, permitindo salvar e carregar estruturas de dados em arquivos.
+
+Esses são apenas alguns dos módulos built-in mais comuns e úteis do Python. Existem muitos outros disponíveis para várias finalidades, 
+e a documentação oficial do Python é um ótimo recurso para explorar esses módulos com mais detalhes.
+
+
+>>>  Módulo OS Python
+
+O módulo os em Python fornece uma maneira de interagir com o sistema operacional subjacente de uma maneira independente da plataforma. 
+Ele oferece várias funcionalidades úteis para manipulação de arquivos, diretórios, execução de comandos do sistema e muito mais. 
+Aqui estão algumas das principais funções e atributos fornecidos pelo módulo os:
+
+Manipulação de arquivos e diretórios:
+
+os.getcwd(): Retorna o diretório de trabalho atual.
+os.chdir(path): Altera o diretório de trabalho atual para o caminho especificado.
+os.listdir(path='.'): Retorna uma lista contendo os nomes dos arquivos no diretório especificado (ou no diretório atual se nenhum for fornecido).
+os.mkdir(path): Cria um novo diretório.
+os.makedirs(path): Cria um diretório recursivamente, incluindo todos os diretórios intermediários necessários.
+
+Manipulação de caminhos de arquivos:
+
+os.path.join(path1, path2, ...): Concatena vários componentes de caminho em um único caminho.
+os.path.exists(path): Verifica se o caminho especificado existe.
+os.path.isfile(path): Verifica se o caminho especificado corresponde a um arquivo.
+os.path.isdir(path): Verifica se o caminho especificado corresponde a um diretório.
+
+Execução de comandos do sistema:
+
+os.system(command): Executa o comando fornecido pelo sistema operacional.
+os.popen(command[, mode[, bufsize]]): Abre um pipe para ou a partir de um comando do sistema.
+
+Variáveis e constantes do sistema:
+
+os.environ: Dicionário contendo as variáveis de ambiente do sistema.
+os.sep: Separador de caminho do sistema (por exemplo, "/" no Unix e "" no Windows).
+os.linesep: Sequência que representa a quebra de linha do sistema.
+os.name: Nome do sistema operacional.
+
+Essas são apenas algumas das funcionalidades oferecidas pelo módulo os. Ele é extremamente útil para tarefas relacionadas à manipulação de arquivos, 
+execução de comandos do sistema e interação com o ambiente do sistema operacional.
+
+
+
+>>> Módulo HTTPServer Python
+
+O módulo http.server em Python fornece classes base para implementar servidores web HTTP. Ele faz parte da biblioteca padrão do Python e é útil para criar servidores web simples para fins de desenvolvimento, testes ou demonstrações. Aqui estão algumas das principais classes e recursos fornecidos pelo módulo http.server:
+
+BaseHTTPRequestHandler: Esta é uma classe base para manipular solicitações HTTP. Ela fornece métodos para processar solicitações HTTP, como do_GET() para lidar com solicitações GET, do_POST() 
+para lidar com solicitações POST, etc.
+
+HTTPServer: Esta é uma classe que implementa um servidor HTTP. Ele aceita solicitações HTTP de clientes, passa essas solicitações para instâncias de BaseHTTPRequestHandler para processamento e envia as respostas de volta aos clientes.
+
+SimpleHTTPRequestHandler: Esta é uma subclasse de BaseHTTPRequestHandler que fornece manipuladores padrão para solicitações HTTP comuns, como solicitações GET para arquivos estáticos. 
+É útil para servir arquivos estáticos (por exemplo, HTML, CSS, JavaScript) de um diretório local.
+
+TCPServer: Esta é uma classe base para servidores TCP. HTTPServer é uma subclasse de TCPServer, especializada para servir solicitações HTTP.
+
+Aqui está um exemplo básico de como usar http.server para criar um servidor web simples:
+
+from http.server import HTTPServer, SimpleHTTPRequestHandler
+
+# Define o endereço e a porta do servidor
+host = 'localhost'
+port = 8000
+
+# Cria uma instância de HTTPServer com SimpleHTTPRequestHandler
+server_address = (host, port)
+httpd = HTTPServer(server_address, SimpleHTTPRequestHandler)
+
+# Inicia o servidor
+print(f'Servidor web iniciado em http://{host}:{port}/')
+httpd.serve_forever()
+
+Este exemplo cria um servidor HTTP na porta 8000 do localhost e usa SimpleHTTPRequestHandler para manipular solicitações HTTP. Você pode acessar os arquivos no diretório atual através 
+do navegador digitando http://localhost:8000/.
+
+No entanto, é importante observar que o servidor HTTP fornecido por http.server é simples e adequado apenas para fins de desenvolvimento ou demonstração. Para aplicativos de produção ou 
+ambientes de alta carga, você pode precisar de servidores web mais robustos, como Apache, Nginx, ou estruturas Python como Flask ou Django.
+
+
+
+>>> Módulo Webbrowser Python
+
+O módulo webbrowser em Python fornece uma interface simples para abrir páginas da web em um navegador padrão. Ele é útil quando você precisa abrir uma URL em um navegador de forma programática. Aqui estão algumas das funções e métodos principais fornecidos pelo módulo webbrowser:
+
+webbrowser.open(url, new=0, autoraise=True): Esta função abre a URL especificada em um navegador padrão. Os argumentos opcionais new e autoraise controlam o comportamento da abertura do navegador. Por padrão, new é 0, o que significa que a URL será aberta na mesma janela se possível, e autoraise é True, o que significa que a janela do navegador será trazida para a frente se estiver oculta.
+
+webbrowser.open_new(url): Esta função abre a URL em uma nova janela do navegador, independentemente das configurações padrão do navegador.
+
+webbrowser.open_new_tab(url): Esta função abre a URL em uma nova guia do navegador, independentemente das configurações padrão do navegador.
+
+webbrowser.get([name]): Esta função retorna um controlador de navegador específico, se disponível. Você pode especificar um navegador pelo seu nome, como "firefox", "chrome", "safari", etc. Se nenhum nome for especificado, o controlador para o navegador padrão será retornado.
+
+webbrowser.register(name, constructor, instance): Esta função registra um controlador de navegador personalizado com um nome específico para uso posterior com webbrowser.get().
+
+Aqui está um exemplo simples de como usar o módulo webbrowser para abrir uma URL em um navegador padrão:
+
+import webbrowser
+
+url = 'https://www.exemplo.com'
+webbrowser.open(url)
+
+Este código abrirá a URL https://www.exemplo.com no navegador padrão do sistema.
+
+O módulo webbrowser é útil para automação de tarefas que envolvem a abertura de páginas da web, como abrir a documentação de uma biblioteca, verificar informações online, ou até mesmo implementar recursos de ajuda em aplicativos.
